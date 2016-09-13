@@ -16,7 +16,7 @@ int main()
   bool runLoop = true;
   int secretNum, guessNum, guesses;
   while(runLoop){
-	  cout << "Guess the correct number between 0-100.";
+	  cout << "Guess the correct number between 0-100. ";
 	  guessNum = -1;//makes sure while loop always runs
 	  guesses = 0;
 	  secretNum = rand()%100;//rand 0-100
@@ -26,21 +26,26 @@ int main()
 		if(guessNum != secretNum){//incorrect guess
 		  cout << "Incorrect guess! ";
 		  if(guessNum > secretNum){//guess bigger
-			cout << "Your guess was larger than the secret number";
+			cout << "Your guess was larger than the secret number ";
 		  }else{//guess smaller
-			cout << "Your guess was smaller than the secret number";
+			cout << "Your guess was smaller than the secret number ";
 			}
 		}else{
-			cout << "Congrats you win! The number was " << secretNum << ".";
-			cout << "The total guesses was " << guesses <, ".";
-			cout << "Would you like to play again? (Y/N)";
+			cout << "Congrats you win! The number was " << secretNum << ". ";
+			cout << "The total guesses was " << guesses << ".";
+			cout << "Would you like to play again? (Y/N) ";
 			string reply;
-			cin >> reply; 
-			if(reply == "Y"){ 
-
-			}else if(reply == "N"){
-			}else{
-				cout << "UNRECOGNIZED COMMAND";
+			bool noCommand = true;
+			while(noCommand){
+				cin >> reply;
+				if(reply == "Y"){
+					noCommand=false;
+				}else if(reply == "N"){
+					noCommand=false;
+					runLoop = false;
+				}else{
+					cout << "UNRECOGNIZED COMMAND ";
+				}
 			}
 		}
 		}
